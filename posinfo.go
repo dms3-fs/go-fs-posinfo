@@ -1,10 +1,10 @@
-// Package posinfo wraps offset information used by ipfs filestore nodes
+// Package posinfo wraps offset information used by dms3fs filestore nodes
 package posinfo
 
 import (
 	"os"
 
-	ipld "github.com/ipfs/go-ipld-format"
+	dms3ld "github.com/dms3-fs/go-ld-format"
 )
 
 // PosInfo stores information about the file offset, its path and
@@ -15,9 +15,9 @@ type PosInfo struct {
 	Stat     os.FileInfo // can be nil
 }
 
-// FilestoreNode is an ipld.Node which arries PosInfo with it
+// FilestoreNode is an dms3ld.Node which arries PosInfo with it
 // allowing to map it directly to a filesystem object.
 type FilestoreNode struct {
-	ipld.Node
+	dms3ld.Node
 	PosInfo *PosInfo
 }
